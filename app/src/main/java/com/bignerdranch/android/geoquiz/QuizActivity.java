@@ -42,7 +42,7 @@ public class QuizActivity extends AppCompatActivity {
             messageResId = R.string.incorrect_toast;
         }
 
-        Toast.makeText((this, messageResId, Toast.LENGTH_SHORT)
+        Toast.makeText((this), messageResId, Toast.LENGTH_SHORT)
                 .show();
     }
 
@@ -57,7 +57,7 @@ public class QuizActivity extends AppCompatActivity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
+               checkAnswer(true);
             }
         });
 
@@ -65,7 +65,7 @@ public class QuizActivity extends AppCompatActivity {
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT).show();
+                checkAnswer(false);
             }
         });
 
