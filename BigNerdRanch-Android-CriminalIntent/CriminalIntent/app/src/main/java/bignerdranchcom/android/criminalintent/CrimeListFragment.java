@@ -18,6 +18,25 @@ public class CrimeListFragment extends Fragment {
 
     privite class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
 
+        @Override
+        public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+            View view = layoutInflater
+                    .inflate(android.R.layout.simple_list_item_1, parent, false);
+            return new Crime(view);
+        }
+
+        @Override
+        public void onBindViewHolder (CrimeHolder holder. int position) {
+            Crime crime = mCrimes.get(position);
+            holder.mTitleTextView.setText(crime.getTitle());
+        }
+
+        @Override
+        public int getItemCount() {
+            return mCrimes.size();
+        }
+
         private List<Crime> mCrimes;
 
         public CrimeAdapter(List<Crime> crimes) {
@@ -37,6 +56,7 @@ public class CrimeListFragment extends Fragment {
     }
 
     private RecyclerView mCrimeRecyclerView;
+    private CrimeAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +68,14 @@ public class CrimeListFragment extends Fragment {
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         return view;
+    }
+
+    private void updateUI() {
+        CrimeLab crimeLab = CrimeLab.get(getActivity());
+        List<Crime> crimes = crimeLab.getCrimes();
+
+        mAdapter = new CrimeAdapter(crimes);
+        mCrimeRecyclerView.setAdapter((mAdapter));
     }
 
 }
