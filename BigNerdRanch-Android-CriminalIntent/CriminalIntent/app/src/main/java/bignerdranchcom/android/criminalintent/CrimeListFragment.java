@@ -9,10 +9,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by Stan on 5/25/16.
  */
 public class CrimeListFragment extends Fragment {
+
+    privite class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
+
+        private List<Crime> mCrimes;
+
+        public CrimeAdapter(List<Crime> crimes) {
+            mCrimes = crimes;
+        }
+    }
 
     private class CrimeHolder extends RecyclerView.ViewHolder {
 
