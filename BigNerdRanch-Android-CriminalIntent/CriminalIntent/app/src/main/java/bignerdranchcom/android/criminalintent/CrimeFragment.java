@@ -26,9 +26,9 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
     public static CrimeFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID, crimeId);
-
+        
         CrimeFragment Fragment = new CrimeFragment();
-        fragment.setArgument(args);
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -36,7 +36,6 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
-
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
