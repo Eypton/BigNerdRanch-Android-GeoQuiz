@@ -16,7 +16,7 @@ import java.util.UUID;
 
 public class CrimeFragment extends android.support.v4.app.Fragment {
 
-    private static final String ARG_CRIME_ID = "crime_id"
+    private static final String ARG_CRIME_ID = "crime_id";
 
     private Crime mCrime;
     private EditText mTitleField;
