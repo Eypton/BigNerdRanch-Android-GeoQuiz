@@ -27,7 +27,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID, crimeId);
         
-        CrimeFragment Fragment = new CrimeFragment();
+        CrimeFragment fragment = new CrimeFragment();
         fragment.setArguments(args);
         return fragment;
     }
