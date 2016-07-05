@@ -72,7 +72,7 @@ public class CrimeFragment extends android.support.v4.app.Fragment {
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager manager = getFragmentManager();
+                android.support.v4.app.FragmentManager manager = getFragmentManager();
                 DatePickerFragment dialog = new DatePickerFragment();
                 dialog.show(manager, DIALOG_DATE);
             }
